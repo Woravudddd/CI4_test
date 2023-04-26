@@ -45,6 +45,7 @@ public function LoginClick()
 
             $this->session->set('isLoggedIn', true);
             $this->session->set('email', $check_email['email']);
+            $this->session->set('id', $check_email['id']);
 
             return redirect()->to('dashboard');
 

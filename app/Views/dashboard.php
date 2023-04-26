@@ -8,7 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
+<style>
+ 
+
+
+</style>
 <body>
+<?= $this->include('layouts\navbar'); ?>
+
     <?php if(session()->has('isLoggedIn')) {
             echo 1111;
     } ?>
@@ -20,7 +27,7 @@
       <div class="d-flex float-end" role="search">
     
         <a class="btn btn-outline-success" href="<?= url_to('create') ?>">CREATE EMPLOYEE</a>
-        <a class="btn btn-outline-success" href="<?= url_to('Logout') ?>">Logout</a>
+       
 </div>
 </div>
 

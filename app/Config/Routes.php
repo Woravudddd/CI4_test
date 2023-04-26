@@ -27,6 +27,8 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 $routes->get('/', 'Home::index');
+
+$routes->get('/home','Homeshop::index',['as'=>'HomePage']);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
@@ -40,7 +42,10 @@ $routes->group('', ['filter' => 'UserFilter'], function($routes)
     $routes->get('/edit/(:num)','Dashboard::edit/$1',['as' => 'edit']);
     $routes->post('/update/(:num)','Dashboard::update/$1',['as' => 'update']);
     $routes->get('/logout','Login::Logout',['as' => 'Logout']);
+    $routes->get('/manage','Homeshop::ManagePage',['as'=>'ManagePage']);
+    $routes->post('/manage/create','Homeshop::CreateItemClick',['as'=>'CreateItemClick']);
 });
+
 
 $routes->group('', ['filter' => 'GuestFilter'], function($routes)
 {
